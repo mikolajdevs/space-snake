@@ -2,29 +2,27 @@ package org.example;
 
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static org.example.Utils.MENU;
+import static org.example.Utils.loadFXML;
+
 public class App extends Application {
+
+    public static Stage stage;
 
     public static void main(String[] args) {
         launch(args);
     }
 
-    public static Parent loadFXML(String fileName) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fileName + ".fxml"));
-        return fxmlLoader.load();
-    }
-
     @Override
-    public void start(Stage stage) throws Exception {
-        Scene scene = new Scene(loadFXML("menu"));
+    public void start(Stage stage) throws IOException {
+        App.stage = stage;
         stage.setTitle("SnakeX");
-        stage.setScene(scene);
+        stage.setScene(new Scene(loadFXML(MENU)));
         stage.setResizable(false);
         stage.show();
     }
