@@ -1,0 +1,35 @@
+@font-face {
+    src: url("fonts/VCR_OSD_MONO_1.ttf");
+}
+
+.bg {
+    -fx-background-image: url("images/bg.jpg");
+    -fx-background-size: cover;
+    -fx-font-family: "VCR OSD Mono";
+}
+
+.bg-cover {
+    -fx-fill: black;
+    -fx-opacity: 0.6;
+}
+
+.button {
+    -fx-min-width: 400;
+    -fx-min-height: 100;
+
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-border-width: 5;
+
+    -fx-text-fill: white;
+    -fx-font-family: "VCR OSD Mono";
+    -fx-font-size: 50;
+}
+
+.button:hover {
+    -fx-background-color: #72ff00;
+    -fx-text-fill: black;
+    -fx-cursor: hand;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
