@@ -8,6 +8,7 @@ import org.example.Utils;
 
 import java.io.IOException;
 
+import static org.example.Utils.GAME;
 import static org.example.Utils.HIGH_SCORES;
 
 public class MenuController {
@@ -23,7 +24,8 @@ public class MenuController {
     Button exit;
 
     @FXML
-    public void newGame() {
+    public void newGame() throws IOException {
+        Utils.changeScene(GAME);
     }
 
     @FXML

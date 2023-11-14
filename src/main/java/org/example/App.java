@@ -28,6 +28,13 @@ public class App extends Application {
         if (is != null) {
             stage.getIcons().add(new Image(is));
         }
+
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/highscores.fxml"));
+//        Parent root = loader.load();
+//
+//        HighScoresController controller = loader.getController();
+//        controller.setPlayerRepository(new FilePlayerRepository());
+
         stage.setScene(new Scene(loadFXML(MENU)));
         stage.setResizable(false);
         stage.show();

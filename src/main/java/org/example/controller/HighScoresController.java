@@ -9,15 +9,13 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.example.Utils;
 import org.example.model.Player;
+import org.example.repository.PlayerRepository;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import static org.example.Utils.*;
+import static org.example.Utils.MENU;
 
 public class HighScoresController {
 
@@ -30,8 +28,14 @@ public class HighScoresController {
     @FXML
     Button menu;
 
+    private final PlayerRepository playerRepository;
+
+    public HighScoresController(PlayerRepository playerRepository) {
+        this.playerRepository = playerRepository;
+    }
+
     public void initialize() {
-        List<Player> players = readPlayersArrayListFromFile("players.obj");
+        List<Player> players = playerRepository.getAllPlayers();
 
         Comparator<Player> compareByScore = Comparator.comparingDouble(Player::getScore);
         players.sort(compareByScore.reversed());
@@ -44,15 +48,6 @@ public class HighScoresController {
         tableColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));
 
         tableView.setItems(list);
-    }
-
-    @SuppressWarnings("unchecked")
-    public ArrayList<Player> readPlayersArrayListFromFile(String path) {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(path))) {
-            return (ArrayList<Player>) ois.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            return new ArrayList<>();
-        }
     }
 
     public void backToMenu() throws IOException {

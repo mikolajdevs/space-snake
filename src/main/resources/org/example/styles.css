@@ -30,6 +30,13 @@
     -fx-background-color: #72ff00;
     -fx-text-fill: black;
     -fx-cursor: hand;
-    -fx-scale-x: 1.05;
-    -fx-scale-y: 1.05;
+}
+
+.button.emphasis {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+.button.emphasis:hover {
+    -fx-background-color: #72ff00;
 }
