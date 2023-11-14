@@ -1,0 +1,26 @@
+@import url("styles.css");
+
+.table-view {
+    -fx-background-color: transparent;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-font-size: 50px;
+    -fx-border-color: black;
+}
+.table-view .column-header-background{
+    -fx-background-color: #72ff00;
+}
+.table-view .table-column{
+    -fx-alignment:center;
+}
+.table-view .table-cell{
+    -fx-text-fill: white;
+    -fx-font-size: 30px;
+    -fx-background-color: transparent;
+}
+
+.table-row-cell {
+    -fx-background-color:transparent;
+    -fx-border-color: white;
+}

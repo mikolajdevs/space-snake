@@ -4,6 +4,11 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import org.example.Utils;
+
+import java.io.IOException;
+
+import static org.example.Utils.HIGH_SCORES;
 
 public class MenuController {
 
@@ -22,7 +27,8 @@ public class MenuController {
     }
 
     @FXML
-    public void highScores() {
+    public void highScores() throws IOException {
+        Utils.changeScene(HIGH_SCORES);
     }
 
     @FXML
